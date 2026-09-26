@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef Name="Arayashiki_BladetrailBase" Abstract="True">
+        <thingClass>MoteThrown</thingClass>
+        <category>Mote</category>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <useHitPoints>false</useHitPoints>
+        <mote>
+            <fadeInTime>0.05</fadeInTime>
+            <solidTime>0.3</solidTime>
+            <fadeOutTime>60</fadeOutTime> 
+        </mote>
+    </ThingDef>
+
+    <ThingDef ParentName="Arayashiki_BladetrailBase">
+        <defName>Arayashiki_BladetrailA</defName>
+        <label>bladetrail</label>
+        <graphicData>
+            <texPath>VFX/bladetrail_A</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="Arayashiki_BladetrailBase">
+        <defName>Arayashiki_BladetrailB</defName>
+        <label>bladetrail</label>
+        <graphicData>
+            <texPath>VFX/bladetrail_B</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+    </ThingDef>
+
+
+    <ThingDef ParentName="Arayashiki_BladetrailBase">
+        <defName>Arayashiki_BladetrailC</defName>
+        <label>bladetrail</label>
+        <graphicData>
+            <texPath>VFX/bladetrail_C</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+    </ThingDef>
+
+
+    <ThingDef ParentName="Arayashiki_BladetrailBase">
+        <defName>Arayashiki_BladetrailD</defName>
+        <label>bladetrail</label>
+        <graphicData>
+            <texPath>VFX/bladetrail_D</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+    </ThingDef>
+
+</Defs>

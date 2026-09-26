@@ -4,3 +4,10 @@ E:\rimworld arayashiki mod\gneep\Arayashiki\obj\Debug\Arayashiki.csproj.Assembly
 E:\rimworld arayashiki mod\gneep\Arayashiki\obj\Debug\Arayashiki.csproj.CoreCompileInputs.cache
 E:\rimworld arayashiki mod\gneep\Arayashiki\obj\Debug\Arayashiki.dll
 E:\rimworld arayashiki mod\gneep\Arayashiki\obj\Debug\Arayashiki.pdb
+E:\Steam Games\steamapps\common\RimWorld\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\1.6\Assemblies\Arayashiki.dll
+E:\Steam Games\steamapps\common\RimWorld\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\1.6\Assemblies\Arayashiki.pdb
+E:\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\Source\obj\Debug\Arayashiki.csproj.AssemblyReference.cache
+E:\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\Source\obj\Debug\Arayashiki.csproj.CoreCompileInputs.cache
+E:\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\Source\obj\Debug\Arayashiki.csproj.Up2Date
+E:\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\Source\obj\Debug\Arayashiki.dll
+E:\Steam Games\steamapps\common\RimWorld\Mods\Arayashiki\Source\obj\Debug\Arayashiki.pdb
