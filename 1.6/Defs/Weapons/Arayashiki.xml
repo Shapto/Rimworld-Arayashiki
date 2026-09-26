@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseMeleeWeapon">
+      <defName>Arayashiki_Sheathed</defName>
+      <label>Arayashiki (Sheathed)</label>
+      <description>placeholder</description>
+      <graphicData>
+        <texPath>Weapons/Arayashiki_Sheathed</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+      </graphicData>
+      <soundInteract>Interact_Melee</soundInteract>
+
+      <statBases>
+        <MarketValue>20000</MarketValue>
+        <Mass>2.5</Mass>
+      </statBases>
+
+      <weaponTags>
+        <li>Arayashiki_Sheathed</li>
+      </weaponTags>
+
+      <tools>
+        <li>
+          <label>scabbard</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>23</power>
+          <cooldownTime>1.75</cooldownTime>
+        </li>
+      </tools>
+
+      <comps>
+      <li Class="CompProperties_EquippableAbility">
+        <abilityDef>Unsheathe</abilityDef>
+      </li>
+      </comps>
+
+      <equippedAngleOffset>0</equippedAngleOffset>
+      </ThingDef>
+
+      <ThingDef ParentName="BaseMeleeWeapon">
+      <defName>Arayashiki</defName>
+      <label>Arayashiki</label>
+      <description>placeholder 2</description>
+      <graphicData>
+        <texPath>Weapons/Arayashiki_Unsheathed</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+      </graphicData>
+      <soundInteract>Interact_Melee</soundInteract>
+
+      <statBases>
+        <MarketValue>20000</MarketValue>
+        <Mass>2.5</Mass>
+      </statBases>
+
+      <weaponTags>
+        <li>Arayashiki</li>
+      </weaponTags>
+
+      <tools>
+      <li>
+        <label>edge</label>
+          <capacities>
+            <li>Cut</li>
+          </capacities>
+        <power>40</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>4</armorPenetration>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+        <li>Stab</li>
+        </capacities>
+        <power>40</power>
+        <cooldownTime>2.0</cooldownTime>
+        <armorPenetration>5</armorPenetration>
+      </li>
+      </tools>
+
+      <comps>
+      <li Class="CompProperties_EquippableAbility">
+        <abilityDef>Resheathe</abilityDef>
+      </li>
+      </comps>
+
+      <equippedAngleOffset>0</equippedAngleOffset>
+    </ThingDef>
+
+</Defs>
