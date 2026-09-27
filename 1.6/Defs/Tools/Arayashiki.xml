@@ -10,12 +10,12 @@
         <requiredCapacity>Arayashiki_Slash</requiredCapacity>
         <verb>
             <verbClass>Arayashiki.Verb_ArayashikiSlash</verbClass>
-            <meleeDamageDef>Cut</meleeDamageDef> 
+            <meleeDamageDef>Arayashiki_Cut</meleeDamageDef> 
         </verb>
         <logEntryDef>MeleeAttack</logEntryDef>
-        <combatLogRulesHit>Combat_Hit</combatLogRulesHit>
-        <combatLogRulesDeflect>Combat_Deflect</combatLogRulesDeflect>
-        <combatLogRulesMiss>Combat_Miss</combatLogRulesMiss>
-        <combatLogRulesDodge>Combat_Dodge</combatLogRulesDodge>
+        <combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+        <combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+        <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+        <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
     </ManeuverDef>
 </Defs>

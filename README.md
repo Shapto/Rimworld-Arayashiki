@@ -13,3 +13,7 @@ So functionally, what I want is:
   - It passes through armor completely and deals more damage than the monosword (the strongest normal melee weapon in RimWorld) to compensate for the debilitating cost of swinging it unsheathed.
 - Then: "Erasing me, Erasing you."
 - After you attack 10 times (charge-up), you can use an ability where your pawn dashes toward the target, does 4–6 quick slashes, and then deletes the target pawn.
+
+Trait/Gene "like maybe without said gene its a 100% chacne to get a memory wipe but with the gene its like 50-75% or something"
+
+Erasing you will feed off of a point system. The cost will be calculated a point system, requiring 10 points to swing arayashiki. Erasing me erasing you will be 100

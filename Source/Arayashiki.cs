@@ -2,6 +2,8 @@
 using System;
 using UnityEngine;
 using Verse;
+using Verse.AI;
+using static RimWorld.FleshTypeDef;
 
 namespace Arayashiki
 {
@@ -17,6 +19,18 @@ namespace Arayashiki
         {
             compClass = typeof(CompAbilityEffect_ArayashikiSwap);
         }
+    }
+
+    /// <summary>
+    /// Represents a mod extension that defines the sheathed and unsheathed forms of an item for use in modded content.
+    /// </summary>
+    /// <remarks>This extension is typically attached to a definition to specify alternate ThingDefs
+    /// representing different states (such as sheathed or unsheathed) of a weapon or item. It enables modders to
+    /// configure item state transitions without hardcoding logic.</remarks>
+    public class ModExtension_Arayashiki : DefModExtension
+    {
+        public ThingDef sheathed;
+        public ThingDef unsheathed;
     }
 
     /// <summary>
@@ -70,6 +84,72 @@ namespace Arayashiki
             GenSpawn.Spawn(mote, CasterPawn.Position, CasterPawn.Map);
 
             return result;
+        }
+    }
+
+    /// <summary>
+    /// Represents a specialized injury hediff that tracks its initial severity and enforces a minimum severity
+    /// threshold when healed.
+    /// </summary>
+    /// <remarks>This class extends the behavior of a standard injury by recording the severity at the time
+    /// the wound is added and ensuring that healing cannot reduce the severity below a predefined minimum value. This
+    /// can be used to model wounds that cannot be fully healed or that retain a lasting effect.</remarks>
+    public class Hediff_ArayashikiWound : Hediff_Injury
+    {
+        public float initialSeverity;
+
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+            initialSeverity = Severity;
+        }
+
+        public override void Heal(float amount)
+        {
+            base.Heal(amount);
+            float floor = 0.05f;
+            if (Severity <= floor)
+            {
+                Severity = floor;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Provides a HediffComp that periodically resets the severity of an Arayashiki wound if a nearby pawn is wielding
+    /// a specified weapon. Inherits behavior from HediffComp_TendDuration.
+    /// </summary>
+    /// <remarks>This component checks every 250 ticks for pawns within a fixed radius who are wielding either
+    /// the 'sheathed' or 'unsheathed' weapon defined in the ModExtension_Arayashiki. If such a pawn is found, the
+    /// wound's severity is reset to its initial value. This behavior is specific to the Arayashiki wound mechanic and
+    /// relies on the parent Hediff being a Hediff_ArayashikiWound.</remarks>
+    public class HediffComp_TendArayashiki : HediffComp_TendDuration
+    {
+        private int ticksSinceCheck;
+
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+
+            ticksSinceCheck++;
+            if (ticksSinceCheck < 250) return;
+            ticksSinceCheck = 0;
+
+            int radius = 10;
+
+            ModExtension_Arayashiki mod = parent.def.GetModExtension<ModExtension_Arayashiki>();
+            if (mod == null) return;
+            Pawn victim = parent.pawn;
+            if (victim == null) return;
+            foreach (Pawn pawn in victim.Map.mapPawns.AllPawnsSpawned)
+            {
+                if((pawn?.equipment?.Primary?.def == mod.unsheathed || pawn?.equipment?.Primary?.def == mod.sheathed) && ((victim.Position.DistanceTo(pawn.Position) <= radius)))
+                {
+                    Hediff_ArayashikiWound wound = (Hediff_ArayashikiWound)parent;
+                    parent.Severity = wound.initialSeverity;
+                    tendTicksLeft = 0;
+                }
+            }
         }
     }
 }

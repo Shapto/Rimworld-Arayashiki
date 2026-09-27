@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-<AbilityDef>
-    <defName>Unsheathe</defName>
-    <label>unsheathe</label>
-    <description>Draw the blade.</description>
-    <jobDef>CastAbilityOnThing</jobDef>
-    <targetRequired>False</targetRequired>
-    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
-    <verbProperties>
-        <verbClass>Verb_CastAbility</verbClass>
-        <warmupTime>0.3</warmupTime>
-        <range>0</range>
-        <targetParams>
-            <canTargetSelf>true</canTargetSelf>
-            <canTargetPawns>false</canTargetPawns>
-        </targetParams>
-    </verbProperties>
-    <comps>
-        <li Class="Arayashiki.CompProperties_ArayashikiSwap">
-            <switchTo>Arayashiki</switchTo>
-        </li>
-    </comps>
-</AbilityDef>
+    <AbilityDef>
+        <defName>Unsheathe</defName>
+        <label>unsheathe</label>
+        <description>Draw the blade.</description>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <targetRequired>False</targetRequired>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>0.5</warmupTime>
+            <range>0</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetPawns>false</canTargetPawns>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="Arayashiki.CompProperties_ArayashikiSwap">
+                <switchTo>Arayashiki</switchTo>
+            </li>
+        </comps>
+    </AbilityDef>
 
-<AbilityDef>
-    <defName>Resheathe</defName>
-    <label>resheathe</label>
-    <description>Sheathe the blade.</description>
-    <jobDef>CastAbilityOnThing</jobDef>
-    <targetRequired>False</targetRequired>
-    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
-    <verbProperties>
-        <verbClass>Verb_CastAbility</verbClass>
-        <warmupTime>0.3</warmupTime>
-        <range>0</range>
-        <targetParams>
-            <canTargetSelf>true</canTargetSelf>
-            <canTargetPawns>false</canTargetPawns>
-        </targetParams>
-    </verbProperties>
-    <comps>
-        <li Class="Arayashiki.CompProperties_ArayashikiSwap">
-            <switchTo>Arayashiki_Sheathed</switchTo>
-        </li>
-    </comps>
-</AbilityDef>
+    <AbilityDef>
+        <defName>Sheathe</defName>
+        <label>sheathe</label>
+        <description>Sheathe the blade.</description>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <targetRequired>False</targetRequired>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>0.5</warmupTime>
+            <range>0</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetPawns>false</canTargetPawns>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="Arayashiki.CompProperties_ArayashikiSwap">
+                <switchTo>Arayashiki_Sheathed</switchTo>
+            </li>
+        </comps>
+    </AbilityDef>
 </Defs>

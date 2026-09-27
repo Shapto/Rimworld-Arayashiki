@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <DamageDef>
+        <defName>Arayashiki_Cut</defName>
+        <label>arayashiki cut</label>
+        <workerClass>DamageWorker_AddInjury</workerClass>
+        <armorCategory>Sharp</armorCategory>
+        <deathMessage>{0} has been untangled.</deathMessage>
+        <hediff>Arayashiki_Wound</hediff>
+    </DamageDef>
+</Defs>
