@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 using static RimWorld.FleshTypeDef;
 
 namespace Arayashiki
@@ -60,6 +61,33 @@ namespace Arayashiki
     }
 
     /// <summary>
+    /// Represents a thrown visual effect for an "Arayashiki Bladetrail" with support for flipping and scale jitter
+    /// effects.
+    /// </summary>
+    /// <remarks>This class customizes the rendering of the bladetrail effect by allowing horizontal flipping
+    /// and random scale variation. It is intended for use in visual effects where dynamic orientation and scaling are
+    /// required. Inherits from MoteThrown and overrides the drawing behavior to achieve these effects.</remarks>
+    public class Mote_ArayashikiBladetrail : MoteThrown
+    {
+        public bool flipped;
+        public float scaleJitter = 1f;
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            Material mat = Graphic.MatSingle;
+            float xScale = Graphic.drawSize.x * scaleJitter * (flipped ? -1f : 1f);
+            float zScale = Graphic.drawSize.y * scaleJitter;
+
+            Matrix4x4 matrix = default;
+            matrix.SetTRS(
+                drawLoc,
+                Quaternion.AngleAxis(exactRotation, Vector3.up),
+                new Vector3(xScale, 1f, zScale)
+            );
+            Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
+        }
+    }
+
+    /// <summary>
     /// Represents a melee attack verb that performs an Arayashiki Slash, spawning a visual blade trail effect when
     /// used.
     /// </summary>
@@ -68,23 +96,51 @@ namespace Arayashiki
     /// blade trail variants. Use this verb to provide enhanced visual feedback for special melee attacks.</remarks>
     public class Verb_ArayashikiSlash : Verb_MeleeAttackDamage
     {
-        protected override bool TryCastShot()
+        private int swingCount;
+        protected bool DoOneSwing()
         {
             Vector3 casterPos = CasterPawn.DrawPos;
             Vector3 targetPos = CurrentTarget.Thing != null && CurrentTarget.Thing.Spawned ? CurrentTarget.Thing.DrawPos : CurrentTarget.Cell.ToVector3Shifted();
 
+            swingCount++;
+            bool isCombo = swingCount >= 3;
+            if (isCombo) swingCount = 0;
+
             bool result = base.TryCastShot();
 
-            Arayashiki_Erasure.PayCost(CasterPawn, 10f);
+            if (result) Arayashiki_Erasure.PayCost(CasterPawn, 10f);
 
+            //swing sounds
+            SoundDef swingSound = DefDatabase<SoundDef>.GetNamed("Arayashiki_Swing");
+            SoundInfo soundInfo = SoundInfo.InMap(new TargetInfo(CasterPawn.Position, CasterPawn.Map));
+            swingSound.PlayOneShot(soundInfo);
+
+            //bladetrails
             string[] suffixes = { "A", "B", "C", "D" };
             ThingDef chosenDef = DefDatabase<ThingDef>.GetNamed("Arayashiki_Bladetrail" + suffixes[Rand.Range(0, 4)]);
             if (chosenDef == null) return false;
 
-            Mote mote = (Mote)ThingMaker.MakeThing(chosenDef);
-            mote.exactPosition = CasterPawn.DrawPos;
-            mote.exactRotation = (targetPos - casterPos).AngleFlat();
+            Mote_ArayashikiBladetrail mote = (Mote_ArayashikiBladetrail)ThingMaker.MakeThing(chosenDef);
+            mote.exactPosition = Vector3.Lerp(casterPos, targetPos, 0.75f);
+            mote.exactRotation = (targetPos - casterPos).AngleFlat() + Rand.Range(-40f, 40f);
+            mote.flipped = Rand.Bool;
+            mote.scaleJitter = Rand.Range(0.85f, 1.15f);
             GenSpawn.Spawn(mote, CasterPawn.Position, CasterPawn.Map);
+
+            return result;
+        }
+        protected override bool TryCastShot()
+        {
+            swingCount++;
+            bool isCombo = swingCount >= 3;
+            if (isCombo) swingCount = 0;
+
+            bool result = DoOneSwing();
+            if (isCombo)
+            {
+                DoOneSwing();
+                DoOneSwing();
+            }
 
             return result;
         }

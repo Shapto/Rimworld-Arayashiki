@@ -4,6 +4,7 @@
         <defName>Unsheathe</defName>
         <label>unsheathe</label>
         <description>Draw the blade.</description>
+		<iconPath>Weapons/Arayashiki_Unsheathed</iconPath>
         <jobDef>CastAbilityOnThing</jobDef>
         <targetRequired>False</targetRequired>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
@@ -12,6 +13,7 @@
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
             <range>0</range>
+			<soundCast>Unsheathe</soundCast>
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
                 <canTargetPawns>false</canTargetPawns>
@@ -28,6 +30,7 @@
         <defName>Sheathe</defName>
         <label>sheathe</label>
         <description>Sheathe the blade.</description>
+		<iconPath>Weapons/Arayashiki_Sheathed</iconPath>
         <jobDef>CastAbilityOnThing</jobDef>
         <targetRequired>False</targetRequired>
         <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
@@ -36,6 +39,7 @@
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
             <range>0</range>
+			<soundCast>Sheathe</soundCast>
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
                 <canTargetPawns>false</canTargetPawns>

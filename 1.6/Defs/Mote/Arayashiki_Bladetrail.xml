@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef Name="Arayashiki_BladetrailBase" Abstract="True">
-        <thingClass>MoteThrown</thingClass>
+		<thingClass>Arayashiki.Mote_ArayashikiBladetrail</thingClass>
         <category>Mote</category>
         <altitudeLayer>MoteOverhead</altitudeLayer>
         <useHitPoints>false</useHitPoints>
@@ -20,6 +20,7 @@
             <texPath>VFX/bladetrail_A</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
         </graphicData>
     </ThingDef>
 
@@ -30,6 +31,7 @@
             <texPath>VFX/bladetrail_B</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
         </graphicData>
     </ThingDef>
 
@@ -41,6 +43,7 @@
             <texPath>VFX/bladetrail_C</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
         </graphicData>
     </ThingDef>
 
@@ -52,6 +55,7 @@
             <texPath>VFX/bladetrail_D</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
         </graphicData>
     </ThingDef>
 
