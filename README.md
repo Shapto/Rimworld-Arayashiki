@@ -17,3 +17,6 @@ So functionally, what I want is:
 Trait/Gene "like maybe without said gene its a 100% chacne to get a memory wipe but with the gene its like 50-75% or something"
 
 Erasing you will feed off of a point system. The cost will be calculated a point system, requiring 10 points to swing arayashiki. Erasing me erasing you will be 100
+possibly Slay the Heavens Tiansha instead, 100?
+A buff for every point of erased memory that increases something? 
+I still need a move that does the main part of the weapon (deletion)
