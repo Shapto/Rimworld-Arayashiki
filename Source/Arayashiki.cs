@@ -129,6 +129,14 @@ namespace Arayashiki
 
             return result;
         }
+
+        /// <summary>
+        /// Attempts to perform a swing attack, triggering a combo sequence on every third swing.
+        /// </summary>
+        /// <remarks>When called, this method increments the swing count. On every third consecutive call,
+        /// it triggers a combo by performing two additional swing attacks. The return value reflects only the result of
+        /// the initial swing attempt, not the combo swings.</remarks>
+        /// <returns>true if the initial swing attack was successfully performed; otherwise, false.</returns>
         protected override bool TryCastShot()
         {
             swingCount++;

@@ -1,0 +1,14 @@
+{
+  "TextureModID": "shapto.arayashiki",
+  "ItemDefName": "Arayashiki",
+  "ItemType": "ThingDef",
+  "ItemTypeNamespace": "Verse",
+  "OffX": 0.6744135,
+  "OffY": 0.104134023,
+  "Rotation": 40.0,
+  "ScaleX": 1.6,
+  "ScaleY": 1.6,
+  "BladeStart": 0.107709661,
+  "BladeEnd": 1.65586591,
+  "MeleeWeaponType": 6
+}
