@@ -2,10 +2,10 @@
 <Defs>
     <DamageDef>
         <defName>Arayashiki_Cut</defName>
-        <label>arayashiki cut</label>
+        <label>sizzling wound</label>
         <workerClass>DamageWorker_AddInjury</workerClass>
         <armorCategory>Sharp</armorCategory>
-        <deathMessage>{0} has been untangled.</deathMessage>
+        <deathMessage>{0} has been severed.</deathMessage>
         <hediff>Arayashiki_Wound</hediff>
     </DamageDef>
 </Defs>

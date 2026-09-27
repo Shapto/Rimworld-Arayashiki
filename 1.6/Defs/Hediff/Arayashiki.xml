@@ -2,9 +2,9 @@
 <Defs>
 <HediffDef ParentName="InjuryBase">
     <defName>Arayashiki_Wound</defName>
-    <label>arayashiki wound</label>
-    <labelNoun>an arayashiki wound</labelNoun>
-    <description>A cut that will never heal again. It burns quietly, and reopens whenever the blade draws near.</description>
+    <label>sizzling wound</label>
+    <labelNoun>a sizzling wound</labelNoun>
+    <description>A wound that will never heal again. It burns quietly, and reopens whenever Arayashiki draws near.</description>
     <hediffClass>Arayashiki.Hediff_ArayashikiWound</hediffClass>
     <isBad>true</isBad>
     <comps>
@@ -23,6 +23,7 @@
         <painPerSeverity>0.0125</painPerSeverity>
         <bleedRate>0.06</bleedRate>
         <canMerge>false</canMerge>
+		<destroyedLabel>erased</destroyedLabel>
     </injuryProps>
 </HediffDef>
 </Defs>
