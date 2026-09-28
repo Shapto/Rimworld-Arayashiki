@@ -8,6 +8,7 @@
   "Rotation": 40.0,
   "ScaleX": 1.6,
   "ScaleY": 1.6,
+  "HandsMode": 2,
   "BladeStart": 0.107709661,
   "BladeEnd": 1.65586591,
   "MeleeWeaponType": 6

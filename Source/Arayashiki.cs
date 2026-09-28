@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
@@ -70,6 +71,7 @@ namespace Arayashiki
     /// <remarks>This class customizes the rendering of the bladetrail effect by allowing horizontal flipping
     /// and random scale variation. It is intended for use in visual effects where dynamic orientation and scaling are
     /// required. Inherits from MoteThrown and overrides the drawing behavior to achieve these effects.</remarks>
+    [StaticConstructorOnStartup]
     public class Mote_ArayashikiBladetrail : MoteThrown
     {
         public bool flipped;
@@ -177,73 +179,6 @@ namespace Arayashiki
                     Hediff_ArayashikiWound wound = (Hediff_ArayashikiWound)parent;
                     parent.Severity = wound.initialSeverity;
                     tendTicksLeft = 0;
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// Provides methods for applying the cost of Arayashiki Erasure to a pawn by removing memories, reducing skill
-    /// levels, or removing traits as necessary.
-    /// </summary>
-    /// <remarks>This class is intended for use in scenarios where a pawn must pay a psychological or
-    /// skill-based cost, such as in game mechanics involving memory erasure or personality alteration. All members are
-    /// static and thread safety is not guaranteed.</remarks>
-    public static class Arayashiki_Erasure
-    {
-        public static void PayCost(Pawn wielder, float cost)
-        {
-            var candidates = wielder.needs.mood.thoughts.memories.Memories
-                 .Where(t => !t.permanent)
-                 .OrderByDescending(t => Math.Abs(t.moodOffset))
-                 .ToList();
-
-            float remainingCost = cost;
-
-            foreach (var candidate in candidates)
-            {
-                if (remainingCost <= 0) break;
-                remainingCost -= Math.Abs(candidate.moodOffset);
-                wielder.needs.mood.thoughts.memories.RemoveMemory(candidate);
-                MoteMaker.ThrowText(wielder.DrawPos, wielder.Map, "Memory erased", Color.magenta);
-            }
-            if (remainingCost > 0)
-            {
-                var skillCandidates = wielder.skills.skills
-                    .Where(s => s.Level > 0 && s.def != SkillDefOf.Melee)
-                    .OrderByDescending(s => s.Level)
-                    .ToList();
-
-                foreach (var skill in skillCandidates)
-                {
-                    if (remainingCost <= 0) break;
-                    MoteMaker.ThrowText(wielder.DrawPos, wielder.Map, $"{skill} -1", Color.magenta);
-                    skill.Level--;
-                    remainingCost -= 10;
-                }
-            }
-            if (remainingCost > 0)
-            {
-                var traitCandidates = wielder.story.traits.allTraits
-                    .OrderBy(t => Rand.Value)
-                    .ToList();
-
-                foreach (var trait in traitCandidates)
-                {
-                    if (remainingCost <= 0) break;
-                    MoteMaker.ThrowText(wielder.DrawPos, wielder.Map, $"{trait} erased", Color.red);
-                    wielder.story.traits.RemoveTrait(trait);
-                    remainingCost -= 100;
-                }
-            }
-            if (remainingCost > 0)
-            {
-                var skill = wielder.skills.GetSkill(SkillDefOf.Melee);
-                while (skill.Level > 0 && remainingCost > 0)
-                {
-                    MoteMaker.ThrowText(wielder.DrawPos, wielder.Map, $"{skill} -1", Color.magenta);
-                    skill.Level--;
-                    remainingCost -= 10;
                 }
             }
         }

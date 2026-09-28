@@ -30,6 +30,12 @@ namespace Arayashiki
 
         private static List<ThingDef> bladetrailDefs;
 
+        /// <summary>
+        /// Gets a cached list of all ThingDef objects whose defName starts with "Arayashiki_Bladetrail".
+        /// </summary>
+        /// <remarks>The returned list is initialized on first access and cached for subsequent calls. The
+        /// list reflects the set of matching ThingDef instances available at the time of first access; changes to the
+        /// underlying DefDatabase after initialization are not reflected.</remarks>
         private static List<ThingDef> BladetrailDefs
         {
             get
@@ -44,6 +50,18 @@ namespace Arayashiki
             }
         }
 
+        /// <summary>
+        /// Attempts to perform a strike action against the specified target, applying either a primary or bonus hit
+        /// based on the provided flag.
+        /// </summary>
+        /// <remarks>When performing a primary strike, the method applies the standard attack logic and
+        /// deducts the associated cost. A bonus hit applies damage directly and is not subject to the usual cooldown.
+        /// Visual and audio effects are triggered if applicable. The method may return false if required visual effects
+        /// cannot be created.</remarks>
+        /// <param name="target">The target to strike. Specifies the entity or location that will receive the attack.</param>
+        /// <param name="primary">If set to <see langword="true"/>, performs a primary strike with full effects and cost; if <see
+        /// langword="false"/>, applies a bonus hit that bypasses the standard cooldown.</param>
+        /// <returns>true if the strike was successfully executed; otherwise, false.</returns>
         public bool Strike(LocalTargetInfo target, bool primary)
         {
             currentTarget = target;
@@ -80,12 +98,19 @@ namespace Arayashiki
             mote.exactRotation = (targetPos - casterPos).AngleFlat() + Rand.Range(-40f, 40f);
             mote.flipped = Rand.Bool;
             mote.scaleJitter = Rand.Range(0.85f, 1.15f);
-            Log.Message($"[Arayashiki] trail {chosenDef.defName} flipped={mote.flipped} primary={primary}");
             GenSpawn.Spawn(mote, CasterPawn.Position, CasterPawn.Map);
 
             return result;
         }
 
+        /// <summary>
+        /// Determines whether the specified target is currently valid and within range to be hit by the caster.
+        /// </summary>
+        /// <remarks>This method returns false if the caster or their equipment is not present, destroyed,
+        /// dead, or downed, or if the target is not a valid, alive, and spawned entity. Use this method to verify that
+        /// a target can still be affected by actions requiring proximity.</remarks>
+        /// <param name="target">The target to check for validity and hittability. Must represent a spawned, non-destroyed object or pawn.</param>
+        /// <returns>true if the target is alive, spawned, not destroyed, and within 1.5 units of the caster; otherwise, false.</returns>
         private bool TargetStillHittable(LocalTargetInfo target)
         {
             if (CasterPawn == null || !CasterPawn.Spawned || CasterPawn.Dead || CasterPawn.Downed) return false;
@@ -97,6 +122,15 @@ namespace Arayashiki
             return CasterPawn.Position.DistanceTo(t.Position) <= 1.5f;
         }
 
+        /// <summary>
+        /// Performs a sequence of strike actions against the specified target using the provided verb, up to the
+        /// specified number of hits or until the target is no longer hittable.
+        /// </summary>
+        /// <remarks>The method stops striking if the target is no longer hittable before reaching the
+        /// specified number of hits. No action is taken if hits is zero.</remarks>
+        /// <param name="verb">The verb used to perform each strike against the target. Cannot be null.</param>
+        /// <param name="target">The target to be struck. The sequence stops if the target becomes unhittable.</param>
+        /// <param name="hits">The maximum number of strikes to attempt. Must be greater than or equal to zero.</param>
         public static void StrikeSequence(Verb_ArayashikiSlash verb, LocalTargetInfo target, int hits)
         {
             for (int i = 0; i < hits; i++)
@@ -107,6 +141,18 @@ namespace Arayashiki
             return;
         }
 
+        /// <summary>
+        /// Schedules a sequence of strike actions using the specified verb against a target, with a defined number of
+        /// hits and timing intervals.
+        /// </summary>
+        /// <remarks>Each strike is only performed if the target is still valid and hittable at the
+        /// scheduled time. The strikes are scheduled asynchronously and may not occur if the target becomes invalid
+        /// before execution.</remarks>
+        /// <param name="verb">The verb instance used to perform each strike action. Cannot be null.</param>
+        /// <param name="target">The target to be struck by the verb. Must be a valid and hittable target at the time of each strike.</param>
+        /// <param name="hits">The total number of strike actions to schedule. Must be greater than zero.</param>
+        /// <param name="intervalTicks">The number of game ticks to wait between each consecutive strike.</param>
+        /// <param name="startDelayTicks">The number of game ticks to wait before the first strike is performed. Defaults to 0.</param>
         public static void StrikeSequence(Verb_ArayashikiSlash verb, LocalTargetInfo target, int hits, int intervalTicks, int startDelayTicks = 0)
         {
             var scheduler = Current.Game.GetComponent<GameComponent_ArayashikiDelay>();

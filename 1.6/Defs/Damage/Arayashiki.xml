@@ -7,5 +7,6 @@
         <armorCategory>Sharp</armorCategory>
         <deathMessage>{0} has been severed.</deathMessage>
         <hediff>Arayashiki_Wound</hediff>
+		<buildingDamageFactor>10</buildingDamageFactor>
     </DamageDef>
 </Defs>
