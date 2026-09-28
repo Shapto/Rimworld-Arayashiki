@@ -60,6 +60,7 @@
     <Compile Include="Arayashiki_Erasure.cs" />
     <Compile Include="GameComponent_ArayashikiDelay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlayTheHeavens.cs" />
     <Compile Include="Verb_ArayashikiSlash.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="Arayashiki_FinisherSlashBase" Abstract="True">
+		<thingClass>Arayashiki.Mote_ArayashikiFinisherSlash</thingClass>
+		<category>Mote</category>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<mote>
+			<fadeInTime>0</fadeInTime>
+			<solidTime>9.0</solidTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashA</defName>
+		<label>erasure slash</label>
+		<graphicData>
+			<texPath>VFX/erasure_A</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashB</defName>
+		<label>erasure slash</label>
+		<graphicData>
+			<texPath>VFX/erasure_B</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashC</defName>
+		<label>erasure slash</label>
+		<graphicData>
+			<texPath>VFX/erasure_C</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashD</defName>
+		<label>erasure slash</label>
+		<graphicData>
+			<texPath>VFX/erasure_D</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashE</defName>
+		<label>erasure slash</label>
+		<graphicData>
+			<texPath>VFX/erasure_E</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashF</defName>
+		<label>erasure slash</label>
+		<graphicData>
+			<texPath>VFX/erasure_F</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_FinisherSlashBase">
+		<defName>Arayashiki_FinisherSlashMID</defName>
+		<label>erasure slash core</label>
+		<graphicData>
+			<texPath>VFX/erasure_MID</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(14, 14)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>Arayashiki_RendFlash</defName>
+		<label>space rend</label>
+		<thingClass>Arayashiki.Mote_ArayashikiRendFlash</thingClass>
+		<category>Mote</category>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<graphicData>
+			<texPath>VFX/bladetrail_A</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+		<mote>
+			<fadeInTime>0</fadeInTime>
+			<solidTime>4.0</solidTime>
+			<fadeOutTime>0</fadeOutTime>
+		</mote>
+	</ThingDef>
+
+</Defs>

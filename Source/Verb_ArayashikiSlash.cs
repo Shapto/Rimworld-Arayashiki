@@ -50,27 +50,13 @@ namespace Arayashiki
             }
         }
 
-        /// <summary>
-        /// Attempts to perform a strike action against the specified target, applying either a primary or bonus hit
-        /// based on the provided flag.
-        /// </summary>
-        /// <remarks>When performing a primary strike, the method applies the standard attack logic and
-        /// deducts the associated cost. A bonus hit applies damage directly and is not subject to the usual cooldown.
-        /// Visual and audio effects are triggered if applicable. The method may return false if required visual effects
-        /// cannot be created.</remarks>
-        /// <param name="target">The target to strike. Specifies the entity or location that will receive the attack.</param>
-        /// <param name="primary">If set to <see langword="true"/>, performs a primary strike with full effects and cost; if <see
-        /// langword="false"/>, applies a bonus hit that bypasses the standard cooldown.</param>
-        /// <returns>true if the strike was successfully executed; otherwise, false.</returns>
         public bool Strike(LocalTargetInfo target, bool primary)
         {
             currentTarget = target;
-
             Vector3 casterPos = CasterPawn.DrawPos;
-            Vector3 targetPos = CurrentTarget.Thing != null && CurrentTarget.Thing.Spawned ? CurrentTarget.Thing.DrawPos : CurrentTarget.Cell.ToVector3Shifted();
+            Vector3 targetPos = target.Thing != null && target.Thing.Spawned ? target.Thing.DrawPos : target.Cell.ToVector3Shifted();
 
             bool result;
-
             if (primary)
             {
                 result = base.TryCastShot();
@@ -78,20 +64,46 @@ namespace Arayashiki
             }
             else
             {
-                ApplyMeleeDamageToTarget(target);   // bonus hit: damage only, skips the cooldown-gated vanilla swing
+                CasterPawn.rotationTracker.FaceTarget(target);
+                CasterPawn.Drawer.Notify_MeleeAttackOn(target.Thing);
+                ApplyMeleeDamageToTarget(target);
                 result = true;
             }
-            if (CasterPawn.Map == null) return result;
+            SwingEffects(casterPos, targetPos);
+            return result;
+        }
 
-            //swing sounds
-            SoundDef swingSound = DefDatabase<SoundDef>.GetNamed("Arayashiki_Swing");
-            SoundInfo soundInfo = SoundInfo.InMap(new TargetInfo(CasterPawn.Position, CasterPawn.Map));
-            swingSound.PlayOneShot(soundInfo);
+        public void PlaySwing(LocalTargetInfo target, bool animate = true, bool sound = true)
+        {
+            if (CasterPawn.Map == null) return;
+
+            Vector3 casterPos = CasterPawn.DrawPos;
+            Vector3 targetPos = target.Thing != null && target.Thing.Spawned ? target.Thing.DrawPos : target.Cell.ToVector3Shifted();
+
+            CasterPawn.rotationTracker.FaceTarget(target);
+            if (animate)
+            {
+                CasterPawn.Drawer.Notify_MeleeAttackOn(target.Thing);
+                CasterPawn.stances.SetStance(new Stance_Cooldown(12, target, this));
+            }
+
+            SwingEffects(casterPos, targetPos, sound);
+        }
+
+        private void SwingEffects(Vector3 casterPos, Vector3 targetPos, bool sound = true)
+        {
+            if (CasterPawn.Map == null) return;
+
+            if (sound)
+            {
+                SoundDef swingSound = DefDatabase<SoundDef>.GetNamed("Arayashiki_Swing");
+                SoundInfo soundInfo = SoundInfo.InMap(new TargetInfo(CasterPawn.Position, CasterPawn.Map));
+                swingSound.PlayOneShot(soundInfo);
+            }
 
             //bladetrails
-            if (BladetrailDefs.Count == 0) return result;
+            if (BladetrailDefs.Count == 0) return;
             ThingDef chosenDef = BladetrailDefs.RandomElement();
-            if (chosenDef == null) return false;
 
             Mote_ArayashikiBladetrail mote = (Mote_ArayashikiBladetrail)ThingMaker.MakeThing(chosenDef);
             mote.exactPosition = Vector3.Lerp(casterPos, targetPos, 0.75f);
@@ -99,8 +111,6 @@ namespace Arayashiki
             mote.flipped = Rand.Bool;
             mote.scaleJitter = Rand.Range(0.85f, 1.15f);
             GenSpawn.Spawn(mote, CasterPawn.Position, CasterPawn.Map);
-
-            return result;
         }
 
         /// <summary>

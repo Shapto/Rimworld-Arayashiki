@@ -15,7 +15,12 @@
       <statBases>
         <MarketValue>20000</MarketValue>
         <Mass>2.5</Mass>
+		<Beauty>5</Beauty>
+		<Flammability>0</Flammability>
+		<DeteriorationRate>0</DeteriorationRate>
       </statBases>
+
+	  <useHitPoints>false</useHitPoints>
 
       <recipeMaker IsNull="True" />
       <smeltable>false</smeltable>
@@ -35,11 +40,13 @@
         </li>
       </tools>
 
-      <comps>
-      <li Class="CompProperties_EquippableAbility">
-        <abilityDef>Unsheathe</abilityDef>
-      </li>
-      </comps>
+	  <comps>
+		  <li Class="Arayashiki.CompProperties_ArayashikiAbilities">
+			  <abilities>
+				  <li>Unsheathe</li>
+			  </abilities>
+		  </li>
+	  </comps>
 
       <equippedAngleOffset>-45</equippedAngleOffset>
 
@@ -59,11 +66,16 @@
       <recipeMaker IsNull="True" />
       <smeltable>false</smeltable>
 
-      <statBases>
-        <MarketValue>20000</MarketValue>
-        <Mass>2.5</Mass>
+	  <statBases>
+		<MarketValue>20000</MarketValue>
+	    <Mass>2.5</Mass>
+	    <Beauty>5</Beauty>
+		<Flammability>0</Flammability>
+		<DeteriorationRate>0</DeteriorationRate>
       </statBases>
 
+      <useHitPoints>false</useHitPoints>
+		  
       <weaponTags>
         <li>Arayashiki</li>
       </weaponTags>
@@ -81,10 +93,13 @@
       </tools>
 
       <comps>
-      <li Class="CompProperties_EquippableAbility">
-        <abilityDef>Sheathe</abilityDef>
-      </li>
-      </comps>
+	    <li Class="Arayashiki.CompProperties_ArayashikiAbilities">
+		    <abilities>
+		        <li>Sheathe</li>
+				<li>SlayTheHeavens</li>
+		    </abilities>
+		</li>
+	  </comps>
 
       <equippedAngleOffset>-45</equippedAngleOffset>
 

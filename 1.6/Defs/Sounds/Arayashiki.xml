@@ -59,4 +59,34 @@
 			</li>
 		</subSounds>
 	</SoundDef>
+
+	<SoundDef>
+		<defName>Arayashiki_Finisher</defName>
+		<context>MapOnly</context>
+		<sustain>false</sustain>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Arayashiki/Finisher</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>Arayashiki_Flurry</defName>
+		<context>MapOnly</context>
+		<sustain>false</sustain>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Arayashiki/Flurry</clipPath>
+					</li>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
 </Defs>

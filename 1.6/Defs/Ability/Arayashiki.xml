@@ -51,4 +51,32 @@
             </li>
         </comps>
     </AbilityDef>
+
+	<AbilityDef>
+		<defName>SlayTheHeavens</defName>
+		<label>Slay the Heavens - Tiansha</label>
+		<description>Dash to a target and sever their connection to life. Those who are immortal fall like the rest.</description>
+		<iconPath>Icons/SlayTheHeavens</iconPath>
+		<cooldownTicksRange>1800~1800</cooldownTicksRange>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>True</targetRequired>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<range>6</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="Arayashiki.CompProperties_SlayTheHeavens">
+				<pointCost>50</pointCost>
+			</li>
+		</comps>
+	</AbilityDef>
 </Defs>
