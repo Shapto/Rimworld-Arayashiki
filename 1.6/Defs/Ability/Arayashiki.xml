@@ -74,8 +74,38 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="Arayashiki.CompProperties_SlayTheHeavens">
+			<li Class="Arayashiki.CompProperties_DashAbility">
 				<pointCost>50</pointCost>
+				<runClass>Arayashiki.SlayTheHeavens</runClass>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>ErasingMeErasingYou</defName>
+		<label>'Erasing me, Erasing you'</label>
+		<description>Sever a pawn out of existence, and out of everyone's memory.</description>
+		<iconPath>Icons/ErasingMeErasingYou</iconPath>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>True</targetRequired>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<cooldownTicksRange>3600~3600</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<range>12</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="Arayashiki.CompProperties_DashAbility">
+				<pointCost>200</pointCost>
+				<runClass>Arayashiki.ErasingRun</runClass>
 			</li>
 		</comps>
 	</AbilityDef>

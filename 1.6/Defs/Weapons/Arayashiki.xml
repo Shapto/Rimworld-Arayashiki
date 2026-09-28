@@ -13,12 +13,17 @@
       <soundInteract>Arayashiki_PickUp</soundInteract>
 
       <statBases>
-        <MarketValue>20000</MarketValue>
+        <MarketValue>10000</MarketValue>
         <Mass>2.5</Mass>
 		<Beauty>5</Beauty>
 		<Flammability>0</Flammability>
 		<DeteriorationRate>0</DeteriorationRate>
       </statBases>
+
+	  <thingSetMakerTags>
+		  <li>RewardStandardLowFreq</li>
+	  </thingSetMakerTags>
+	  <tradeability>None</tradeability>
 
 	  <useHitPoints>false</useHitPoints>
 
@@ -67,14 +72,18 @@
       <smeltable>false</smeltable>
 
 	  <statBases>
-		<MarketValue>20000</MarketValue>
+		<MarketValue>10000</MarketValue>
 	    <Mass>2.5</Mass>
 	    <Beauty>5</Beauty>
 		<Flammability>0</Flammability>
 		<DeteriorationRate>0</DeteriorationRate>
       </statBases>
 
-      <useHitPoints>false</useHitPoints>
+	  <tradeability>None</tradeability>
+	  <generateCommonality>0</generateCommonality>
+	  <relicChance>0</relicChance>
+
+	  <useHitPoints>false</useHitPoints>
 		  
       <weaponTags>
         <li>Arayashiki</li>
@@ -97,6 +106,7 @@
 		    <abilities>
 		        <li>Sheathe</li>
 				<li>SlayTheHeavens</li>
+				<li>ErasingMeErasingYou</li>
 		    </abilities>
 		</li>
 	  </comps>

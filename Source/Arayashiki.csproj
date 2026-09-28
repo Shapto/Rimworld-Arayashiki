@@ -58,6 +58,9 @@
   <ItemGroup>
     <Compile Include="Arayashiki.cs" />
     <Compile Include="Arayashiki_Erasure.cs" />
+    <Compile Include="CompAbilityEffect_DashAbility.cs" />
+    <Compile Include="DashAttackRun.cs" />
+    <Compile Include="ErasingMeErasingYou.cs" />
     <Compile Include="GameComponent_ArayashikiDelay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SlayTheHeavens.cs" />

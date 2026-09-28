@@ -3,13 +3,22 @@
   "WorkspaceRootPath": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Ability\\Arayashiki.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|e:\\steam games\\steamapps\\common\\rimworld\\mods\\arayashiki\\source\\erasingmeerasingyou.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|solutionrelative:erasingmeerasingyou.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Hediff\\Arayashiki.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|e:\\steam games\\steamapps\\common\\rimworld\\mods\\arayashiki\\source\\dashattackrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|solutionrelative:dashattackrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Weapons\\Arayashiki.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|e:\\steam games\\steamapps\\common\\rimworld\\mods\\arayashiki\\source\\compabilityeffect_dashability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|solutionrelative:compabilityeffect_dashability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Ability\\Arayashiki.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Sounds\\Arayashiki.xml||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -21,12 +30,15 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Damage\\Arayashiki.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\arayashiki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|solutionrelative:arayashiki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Hediff\\Arayashiki.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|e:\\steam games\\steamapps\\common\\rimworld\\mods\\arayashiki\\source\\slaytheheavens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|solutionrelative:slaytheheavens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\arayashiki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAC32B0E-8660-4705-BDFB-A4D4D7568B38}|Arayashiki.csproj|solutionrelative:arayashiki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -54,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,28 +78,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Arayashiki_FinisherSlash.xml",
-              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
-              "RelativeDocumentMoniker": "..\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
-              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
-              "RelativeToolTip": "..\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAYwGQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-09-28T16:29:20.793Z",
+              "DocumentIndex": 0,
+              "Title": "ErasingMeErasingYou.cs",
+              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\ErasingMeErasingYou.cs",
+              "RelativeDocumentMoniker": "ErasingMeErasingYou.cs",
+              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\ErasingMeErasingYou.cs",
+              "RelativeToolTip": "ErasingMeErasingYou.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAmwDoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T17:13:59.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SlayTheHeavens.cs",
-              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\SlayTheHeavens.cs",
-              "RelativeDocumentMoniker": "SlayTheHeavens.cs",
-              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\SlayTheHeavens.cs",
-              "RelativeToolTip": "SlayTheHeavens.cs",
-              "ViewState": "AgIAABgBAAAAAAAAAADwvzkAAAA0AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CompAbilityEffect_DashAbility.cs",
+              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\CompAbilityEffect_DashAbility.cs",
+              "RelativeDocumentMoniker": "CompAbilityEffect_DashAbility.cs",
+              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\CompAbilityEffect_DashAbility.cs",
+              "RelativeToolTip": "CompAbilityEffect_DashAbility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-28T14:53:07.318Z",
+              "WhenOpened": "2026-09-28T17:12:25.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DashAttackRun.cs",
+              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\DashAttackRun.cs",
+              "RelativeDocumentMoniker": "DashAttackRun.cs",
+              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\DashAttackRun.cs",
+              "RelativeToolTip": "DashAttackRun.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAiwJIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T17:02:31.583Z",
               "EditorCaption": ""
             },
             {
@@ -98,14 +123,14 @@
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Weapons\\Arayashiki.xml",
               "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Weapons\\Arayashiki.xml",
               "RelativeToolTip": "..\\1.6\\Defs\\Weapons\\Arayashiki.xml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAGIAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2026-09-27T10:33:27.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Arayashiki.xml",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Sounds\\Arayashiki.xml",
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Sounds\\Arayashiki.xml",
@@ -118,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Arayashiki.xml",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Tools\\Arayashiki.xml",
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Tools\\Arayashiki.xml",
@@ -131,33 +156,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Arayashiki.cs",
-              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\Arayashiki.cs",
-              "RelativeDocumentMoniker": "Arayashiki.cs",
-              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\Arayashiki.cs",
-              "RelativeToolTip": "Arayashiki.cs",
-              "ViewState": "AgIAAEgBAAAAAAAAAAAuwEUAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-26T19:04:48.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Arayashiki.xml",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Damage\\Arayashiki.xml",
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Damage\\Arayashiki.xml",
               "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Damage\\Arayashiki.xml",
               "RelativeToolTip": "..\\1.6\\Defs\\Damage\\Arayashiki.xml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2026-09-27T10:33:08.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Arayashiki.xml",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Hediff\\Arayashiki.xml",
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Hediff\\Arayashiki.xml",
@@ -170,13 +182,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Arayashiki.xml",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Ability\\Arayashiki.xml",
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Ability\\Arayashiki.xml",
               "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Ability\\Arayashiki.xml",
               "RelativeToolTip": "..\\1.6\\Defs\\Ability\\Arayashiki.xml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEoAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAYwE4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2026-09-27T10:33:02.246Z",
               "EditorCaption": ""
@@ -184,6 +196,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "SlayTheHeavens.cs",
+              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\SlayTheHeavens.cs",
+              "RelativeDocumentMoniker": "SlayTheHeavens.cs",
+              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\SlayTheHeavens.cs",
+              "RelativeToolTip": "SlayTheHeavens.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwAsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T14:53:07.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Arayashiki.cs",
+              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\Arayashiki.cs",
+              "RelativeDocumentMoniker": "Arayashiki.cs",
+              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\Arayashiki.cs",
+              "RelativeToolTip": "Arayashiki.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAgwPAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-26T19:04:48.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Arayashiki_FinisherSlash.xml",
+              "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
+              "RelativeDocumentMoniker": "..\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
+              "ToolTip": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
+              "RelativeToolTip": "..\\1.6\\Defs\\Mote\\Arayashiki_FinisherSlash.xml",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAYwGQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-09-28T16:29:20.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Verb_ArayashikiSlash.cs",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\Verb_ArayashikiSlash.cs",
               "RelativeDocumentMoniker": "Verb_ArayashikiSlash.cs",
@@ -196,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Arayashiki_Erasure.cs",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\Arayashiki_Erasure.cs",
               "RelativeDocumentMoniker": "Arayashiki_Erasure.cs",
@@ -209,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "GameComponent_ArayashikiDelay.cs",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\Source\\GameComponent_ArayashikiDelay.cs",
               "RelativeDocumentMoniker": "GameComponent_ArayashikiDelay.cs",
@@ -222,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Arayashiki_Bladetrail.xml",
               "DocumentMoniker": "E:\\Steam Games\\steamapps\\common\\RimWorld\\Mods\\Arayashiki\\1.6\\Defs\\Mote\\Arayashiki_Bladetrail.xml",
               "RelativeDocumentMoniker": "..\\1.6\\Defs\\Mote\\Arayashiki_Bladetrail.xml",
