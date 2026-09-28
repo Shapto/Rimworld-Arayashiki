@@ -75,6 +75,12 @@ namespace Arayashiki
         public bool flipped;
         public float scaleJitter = 1f;
         private static readonly MaterialPropertyBlock block = new MaterialPropertyBlock();
+        private const float SizeMultiplier = 2.2f;  // overall size
+        private const float RippleSpeed = 2f;       // wave speed
+        private const float RippleAmount = 0.02f;   // wobble of +-2% size
+        private const int Echoes = 1;               // extra fainter copies
+        private const float EchoGrowth = 0.10f;     // each echo is this much bigger than the last
+        private const float EchoFade = 0.25f;       // each echo's opacity relative to the one before
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             float alpha = Alpha;
@@ -82,18 +88,31 @@ namespace Arayashiki
 
             Material mat = Graphic.MatSingle;
             Mesh mesh = flipped ? MeshPool.plane10Flip : MeshPool.plane10;
+            Color baseColor = mat.color;
 
-            Color c = mat.color;
-            c.a *= alpha;
-            block.SetColor("_Color", c);
+            float t = AgeSecs;
+            float calm = 1f / (1f + t * 0.15f);   // ripples settle over time
 
-            Matrix4x4 matrix = default;
-            matrix.SetTRS(
-                drawLoc,
-                Quaternion.AngleAxis(exactRotation, Vector3.up),
-                new Vector3(Graphic.drawSize.x * scaleJitter, 1f, Graphic.drawSize.y * scaleJitter)
-            );
-            Graphics.DrawMesh(mesh, matrix, mat, 0, null, 0, block);
+            for (int i = 0; i <= Echoes; i++)
+            {
+                float wave = Mathf.Sin(t * RippleSpeed - i * 0.9f) * RippleAmount * calm;
+                float scale = scaleJitter * SizeMultiplier * (1f + i * EchoGrowth + wave);
+
+                Color c = baseColor;
+                c.a *= alpha * Mathf.Pow(EchoFade, i);
+                block.SetColor("_Color", c);
+
+                Vector3 pos = drawLoc;
+                pos.y -= 0.0005f * i;   // nudge echoes slightly behind the main trail
+
+                Matrix4x4 matrix = default;
+                matrix.SetTRS(
+                    pos,
+                    Quaternion.AngleAxis(exactRotation, Vector3.up),
+                    new Vector3(Graphic.drawSize.x * scale, 1f, Graphic.drawSize.y * scale)
+                );
+                Graphics.DrawMesh(mesh, matrix, mat, 0, null, 0, block);
+            }
         }
     }
 
