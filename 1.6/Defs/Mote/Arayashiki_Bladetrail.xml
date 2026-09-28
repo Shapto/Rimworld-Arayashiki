@@ -59,4 +59,70 @@
         </graphicData>
     </ThingDef>
 
+	<ThingDef ParentName="Arayashiki_BladetrailBase">
+		<defName>Arayashiki_BladetrailE</defName>
+		<label>bladetrail</label>
+		<graphicData>
+			<texPath>VFX/bladetrail_E</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_BladetrailBase">
+		<defName>Arayashiki_BladetrailF</defName>
+		<label>bladetrail</label>
+		<graphicData>
+			<texPath>VFX/bladetrail_F</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_BladetrailBase">
+		<defName>Arayashiki_BladetrailG</defName>
+		<label>bladetrail</label>
+		<graphicData>
+			<texPath>VFX/bladetrail_G</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_BladetrailBase">
+		<defName>Arayashiki_BladetrailH</defName>
+		<label>bladetrail</label>
+		<graphicData>
+			<texPath>VFX/bladetrail_H</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_BladetrailBase">
+		<defName>Arayashiki_BladetrailI</defName>
+		<label>bladetrail</label>
+		<graphicData>
+			<texPath>VFX/bladetrail_I</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="Arayashiki_BladetrailBase">
+		<defName>Arayashiki_BladetrailJ</defName>
+		<label>bladetrail</label>
+		<graphicData>
+			<texPath>VFX/bladetrail_J</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<drawSize>(2.5, 2.5)</drawSize>
+		</graphicData>
+	</ThingDef>
+
 </Defs>

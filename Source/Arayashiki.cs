@@ -6,9 +6,12 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using static RimWorld.FleshTypeDef;
+using static RimWorld.MechClusterSketch;
 
 namespace Arayashiki
 {
+
+
     /// <summary>
     /// Defines the properties for the Arayashiki Swap ability effect, specifying the target thing definition to switch
     /// to when the effect is applied.
@@ -71,86 +74,26 @@ namespace Arayashiki
     {
         public bool flipped;
         public float scaleJitter = 1f;
+        private static readonly MaterialPropertyBlock block = new MaterialPropertyBlock();
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
+            float alpha = Alpha;
+            if (alpha <= 0f) return;
+
             Material mat = Graphic.MatSingle;
-            float xScale = Graphic.drawSize.x * scaleJitter * (flipped ? -1f : 1f);
-            float zScale = Graphic.drawSize.y * scaleJitter;
+            Mesh mesh = flipped ? MeshPool.plane10Flip : MeshPool.plane10;
+
+            Color c = mat.color;
+            c.a *= alpha;
+            block.SetColor("_Color", c);
 
             Matrix4x4 matrix = default;
             matrix.SetTRS(
                 drawLoc,
                 Quaternion.AngleAxis(exactRotation, Vector3.up),
-                new Vector3(xScale, 1f, zScale)
+                new Vector3(Graphic.drawSize.x * scaleJitter, 1f, Graphic.drawSize.y * scaleJitter)
             );
-            Graphics.DrawMesh(MeshPool.plane10, matrix, mat, 0);
-        }
-    }
-
-    /// <summary>
-    /// Represents a melee attack verb that performs an Arayashiki Slash, spawning a visual blade trail effect when
-    /// used.
-    /// </summary>
-    /// <remarks>This class extends the base melee attack behavior by creating a visual effect at the
-    /// attacker's position each time the attack is executed. The effect is chosen randomly from a set of predefined
-    /// blade trail variants. Use this verb to provide enhanced visual feedback for special melee attacks.</remarks>
-    public class Verb_ArayashikiSlash : Verb_MeleeAttackDamage
-    {
-        private int swingCount;
-        protected bool DoOneSwing()
-        {
-            Vector3 casterPos = CasterPawn.DrawPos;
-            Vector3 targetPos = CurrentTarget.Thing != null && CurrentTarget.Thing.Spawned ? CurrentTarget.Thing.DrawPos : CurrentTarget.Cell.ToVector3Shifted();
-
-            swingCount++;
-            bool isCombo = swingCount >= 3;
-            if (isCombo) swingCount = 0;
-
-            bool result = base.TryCastShot();
-
-            if (result) Arayashiki_Erasure.PayCost(CasterPawn, 10f);
-
-            //swing sounds
-            SoundDef swingSound = DefDatabase<SoundDef>.GetNamed("Arayashiki_Swing");
-            SoundInfo soundInfo = SoundInfo.InMap(new TargetInfo(CasterPawn.Position, CasterPawn.Map));
-            swingSound.PlayOneShot(soundInfo);
-
-            //bladetrails
-            string[] suffixes = { "A", "B", "C", "D" };
-            ThingDef chosenDef = DefDatabase<ThingDef>.GetNamed("Arayashiki_Bladetrail" + suffixes[Rand.Range(0, 4)]);
-            if (chosenDef == null) return false;
-
-            Mote_ArayashikiBladetrail mote = (Mote_ArayashikiBladetrail)ThingMaker.MakeThing(chosenDef);
-            mote.exactPosition = Vector3.Lerp(casterPos, targetPos, 0.75f);
-            mote.exactRotation = (targetPos - casterPos).AngleFlat() + Rand.Range(-40f, 40f);
-            mote.flipped = Rand.Bool;
-            mote.scaleJitter = Rand.Range(0.85f, 1.15f);
-            GenSpawn.Spawn(mote, CasterPawn.Position, CasterPawn.Map);
-
-            return result;
-        }
-
-        /// <summary>
-        /// Attempts to perform a swing attack, triggering a combo sequence on every third swing.
-        /// </summary>
-        /// <remarks>When called, this method increments the swing count. On every third consecutive call,
-        /// it triggers a combo by performing two additional swing attacks. The return value reflects only the result of
-        /// the initial swing attempt, not the combo swings.</remarks>
-        /// <returns>true if the initial swing attack was successfully performed; otherwise, false.</returns>
-        protected override bool TryCastShot()
-        {
-            swingCount++;
-            bool isCombo = swingCount >= 3;
-            if (isCombo) swingCount = 0;
-
-            bool result = DoOneSwing();
-            if (isCombo)
-            {
-                DoOneSwing();
-                DoOneSwing();
-            }
-
-            return result;
+            Graphics.DrawMesh(mesh, matrix, mat, 0, null, 0, block);
         }
     }
 

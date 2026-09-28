@@ -11,7 +11,7 @@
         <graphicClass>Graphic_Single</graphicClass>
         <drawSize>(1.6, 1.6)</drawSize>
       </graphicData>
-      <soundInteract>Interact_Melee</soundInteract>
+      <soundInteract>Arayashiki_PickUp</soundInteract>
 
       <statBases>
         <MarketValue>20000</MarketValue>
@@ -56,7 +56,7 @@
         <graphicClass>Graphic_Single</graphicClass>
         <drawSize>(1.6, 1.6)</drawSize>
       </graphicData>
-      <soundInteract>Interact_Melee</soundInteract>
+	  <soundInteract>Arayashiki_PickUp</soundInteract>
 
       <recipeMaker IsNull="True" />
       <smeltable>false</smeltable>
